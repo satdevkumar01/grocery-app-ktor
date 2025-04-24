@@ -21,6 +21,29 @@ repositories {
 }
 
 dependencies {
+        // Ktor Core and Netty Engine
+        implementation("io.ktor:ktor-server-core:2.3.4")
+        implementation("io.ktor:ktor-server-netty:2.3.4")
+
+        // Content Negotiation with Kotlin Serialization
+        implementation("io.ktor:ktor-server-content-negotiation:2.3.4")
+        implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.4")
+
+        // Database (H2 in this example)
+        implementation("com.h2database:h2:2.2.224")
+
+        // Exposed ORM
+        implementation("org.jetbrains.exposed:exposed-core:0.43.0")
+        implementation("org.jetbrains.exposed:exposed-dao:0.43.0")
+        implementation("org.jetbrains.exposed:exposed-jdbc:0.43.0")
+
+        // Kotlin Serialization JSON
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+
+        // Logging (Optional, for better server logging)
+        implementation("ch.qos.logback:logback-classic:1.4.11")
+
+
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty")
     implementation("ch.qos.logback:logback-classic:$logback_version")
