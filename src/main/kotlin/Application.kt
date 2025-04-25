@@ -1,5 +1,6 @@
 package com.sokhal.grocery
 
+import com.sokhal.grocery.routing.configureAuthRouting
 import com.sokhal.grocery.routing.configureRouting
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
@@ -22,4 +23,5 @@ fun Application.module() {
 
     initDatabase()
     configureRouting()
+    configureAuthRouting() // Add authentication routes
 }

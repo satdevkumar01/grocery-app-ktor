@@ -28,13 +28,7 @@ fun Application.configureRouting() {
                     )
                 }
             }
-            transaction {
-                  Products.insert {
-                    it[name] = "Rice"
-                    it[price] = 1002.toBigDecimal()
-                    it[quantity] =123
-                } get Products.id
-            }
+
             if (products.isEmpty()) {
                 call.respond("There is no Items at now please try after some time s")
             }
