@@ -38,3 +38,12 @@ If the server starts successfully, you'll see the following output:
 2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
 ```
 
+## Deployment
+
+To deploy this application to an online server, please refer to the [Deployment Guide](DEPLOYMENT.md) for detailed instructions. The guide covers:
+
+- Building and testing the Docker image
+- Deploying to various cloud platforms (Heroku, AWS, Google Cloud)
+- Database considerations for production environments
+- Environment variables
+- Monitoring, logging, and scaling recommendations
