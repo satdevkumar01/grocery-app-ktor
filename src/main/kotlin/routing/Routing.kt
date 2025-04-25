@@ -28,6 +28,13 @@ fun Application.configureRouting() {
                     )
                 }
             }
+            transaction {
+                  Products.insert {
+                    it[name] = "Rice"
+                    it[price] = 1002.toBigDecimal()
+                    it[quantity] =123
+                } get Products.id
+            }
             if (products.isEmpty()) {
                 call.respond("There is no Items at now please try after some time s")
             }
@@ -37,12 +44,13 @@ fun Application.configureRouting() {
 
         // Add a Product
         post("/addproducts") {
+            val product = call.receive<Product>()
             var productId: Int? = null
             transaction {
                 productId = Products.insert {
-                    it[name] = "Rice"
-                    it[price] =100.00.toBigDecimal()
-                    it[quantity] = 11
+                    it[name] = product.name
+                    it[price] = product.price.toBigDecimal()
+                    it[quantity] = product.quantity
                 } get Products.id
             }
             call.respond(HttpStatusCode.Created, mapOf("new product is created id" to productId))
